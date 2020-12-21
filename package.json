@@ -4,7 +4,7 @@
   "description": "This is a books api to add, delete, edit and read books from mongo db",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "ayush sharma",
   "license": "ISC",
