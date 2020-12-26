@@ -10,6 +10,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app
+  .route("/")
+  .get((req, res) => {
+    res.send("Please go to '/books' route")
+  })
+
+app
   .route("/books")
   .get(bookController.listAllBooks)
   .post(bookController.createBook)
