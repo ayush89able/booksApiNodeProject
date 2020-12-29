@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require("body-parser")
 const bookController = require("./controllers/BookController")
+const cors = require('cors');
 require('./config/db')
 const app = express()
 
@@ -17,14 +18,14 @@ app
 
 app
   .route("/books")
-  .get(bookController.listAllBooks)
-  .post(bookController.createBook)
+  .get(cors(), bookController.listAllBooks)
+  .post(cors(), bookController.createBook)
 
 app
   .route("/books/:bookid")
-  .get(bookController.readBook)
-  .put(bookController.updateBook)
-  .delete(bookController.deleteBook)
+  .get(cors(), bookController.readBook)
+  .put(cors(), bookController.updateBook)
+  .delete(cors(), bookController.deleteBook)
 
 
 app.listen(port, () => {
