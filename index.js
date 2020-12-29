@@ -19,14 +19,14 @@ app
 
 app
   .route("/books")
-  .get(cors(), bookController.listAllBooks)
-  .post(cors(), bookController.createBook)
+  .get(bookController.listAllBooks)
+  .post(bookController.createBook)
 
 app
   .route("/books/:bookid")
-  .get(cors(), bookController.readBook)
-  .put(cors(), bookController.updateBook)
-  .delete(cors(), bookController.deleteBook)
+  .get(bookController.readBook)
+  .put(bookController.updateBook)
+  .delete(bookController.deleteBook)
 
 
 app.listen(port, () => {
